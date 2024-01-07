@@ -1,0 +1,113 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    
+}
+:root{
+    --color-1:#0F1035;
+    --color-2:#365486;
+    --color-3:#7FC7D9;
+    --color-4:#DCF2F1;
+    --cell-size:150px;
+}
+.container{
+    min-height: 100vh;
+    background-image: linear-gradient(135deg,rgba(1, 179, 255, 0.658),rgba(211, 211, 211, 0.701));
+    
+}
+
+.board{
+    height: 100vh;
+    width:100vw;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    align-content: center;
+    display: grid;
+    grid-template-columns: repeat(3,auto);
+    
+}
+
+
+.cell{
+    user-select: none;
+    width: var(--cell-size);
+    height: var(--cell-size);
+    border: 2px solid rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
+    font-size: var(--cell-size);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+
+.cell.X,.cell.O{
+    cursor: context-menu;
+}
+
+.cell:first-child,:nth-child(2),:nth-child(3){
+    border-top: none;
+}
+.cell:nth-child(3n+1){
+    border-left: none;
+}
+.cell:nth-child(3n+3){
+    border-right: none;
+}
+.cell:nth-child(7),:nth-child(8),:nth-child(9){
+    border-bottom: none;
+}
+
+.board.X .cell:not(.X):not(.O):hover::after{
+    color:lightgrey;
+    content:'X';
+}
+.board.O .cell:not(.X):not(.O):hover::after{
+    color:lightgrey;
+    content:'O';
+}
+.notify{ 
+    display:none;
+    position: fixed;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.858);
+    flex-direction: column;
+}
+.btn{
+    margin-top:50px;
+    width: 150px;
+    height:50px;
+    transform: scale(1.4);
+    border-radius: 10px;
+    
+    padding: 10px 20px; 
+    font-size: larger;
+    color: var(--color-1);
+    font-weight: bolder;
+    background:var(--color-3);
+    
+}
+.btn:hover{
+    color:var(--color-4);
+    background-color: var(--color-2);
+    border-color: var(--color-2);
+    cursor: pointer;
+    
+}
+.msg{
+    color:var(--color-4);
+    font-size:100px;
+    font-weight: bold;
+}
+.show{
+    display: flex;
+}
