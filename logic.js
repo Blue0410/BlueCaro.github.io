@@ -32,14 +32,15 @@ function boxClicked(e){
     //check win
     if(checkWin()){
         endgame(false,currentPlayer)
-    } else if(checkDraw()){
+    } 
+    //check draw
+    else if(checkDraw()){
         endgame(true,currentPlayer)
     } else{
+        //swap turn
         swapTurn()
         hoverEffect()
     }
-    //check draw
-    //swap turn
     
 }
 function placeMark(cell,currentPlayer,e){
