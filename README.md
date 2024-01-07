@@ -1,4 +1,4 @@
-
+link: https://blue0410.github.io/BlueCaro.github.io/board.html
 A simple caro project
 
 
