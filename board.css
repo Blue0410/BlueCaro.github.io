@@ -42,10 +42,15 @@
     align-items: center;
     cursor: pointer;
 }
-
-
-.cell.X,.cell.O{
+.cell.X{
     cursor: context-menu;
+    color:red;
+}
+
+
+.cell.O{
+    cursor: context-menu;
+    color:green;
 }
 
 .cell:first-child,:nth-child(2),:nth-child(3){
